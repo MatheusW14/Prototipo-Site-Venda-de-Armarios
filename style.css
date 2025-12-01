@@ -196,6 +196,47 @@ a { text-decoration: none; transition: 0.3s; }
     position: relative;
 }
 
+/* Banner Imersivo (Parallax) */
+.featured-project { 
+    height: 600px; /* Aumentei um pouco a altura */
+        /* NOVA IMAGEM DE HOME THEATER */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1974&auto=format&fit=crop') no-repeat center center; 
+    background-size: cover; 
+    background-attachment: fixed; /* Efeito que a imagem fica parada ao rolar */
+    position: relative; 
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+/* Texto dentro do Banner */
+.featured-caption {
+    text-align: center;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 20px 40px;
+    backdrop-filter: blur(5px);
+    background: rgba(0,0,0,0.4);
+    }
+
+/* Cards e Mosaico */
+.detail-card { border: 1px solid var(--border-color); transition: 0.3s; background-color: var(--bg-card); height: 100%; }
+.detail-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+.detail-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+        
+.mosaic-tall { height: 620px; }
+.mosaic-wide { height: 300px; }
+        
+.mosaic-img {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 4px;
+    filter: brightness(0.85);
+    transition: 0.5s;
+    }
+.mosaic-img:hover { filter: brightness(1); transform: scale(1.02); }
+.overflow-hidden { overflow: hidden; border-radius: 4px; }
+
 /* Máscara escura sobre a imagem */
 .bg-overlay {
     background-color: rgba(0,0,0,0.5);
@@ -318,4 +359,121 @@ body.hovering .cursor-dot { opacity: 0; }
 @media (max-width: 991px) {
     .cursor-dot, .cursor-outline { display: none !important; }
     body { cursor: auto; }
+}
+
+/* MELHORIAS DO LOGIN  */
+
+/* Container Principal */
+.login-container {
+    height: calc(100vh - 80px);
+    width: 100%;
+    overflow: hidden;
+}
+.login-row { height: 100%; }
+
+/* Coluna da Imagem (Esquerda) */
+.bg-login-col {
+    background-color: #000;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.bg-login-col::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Nova imagem de textura/ambiente escuro */
+    background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop') center/cover;
+    opacity: 0.6;
+    animation: kenBurns 20s ease-in-out infinite alternate;
+}
+@keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+
+/* Coluna do Formulário (Direita) */
+.form-col {
+    background-color: var(--bg-body);
+    height: 100%;
+    display: flex;
+    align-items: center; justify-content: center;
+    padding: 20px;
+}
+
+.login-box {
+    width: 100%; max-width: 380px;
+    padding: 40px;
+    /* Removemos a borda e o fundo cinza para ficar mais integrado ao fundo preto */
+    background-color: transparent; 
+}
+
+/* --- NOVOS INPUTS (ESTILO GUCCI/ROLEX) --- */
+
+.input-group-luxury {
+    position: relative;
+    margin-bottom: 30px; /* Espaço entre os campos */
+}
+
+/* O Rótulo (Label) */
+.label-luxury {
+    display: block;
+    color: var(--accent); /* Dourado */
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* O Campo de Texto */
+.form-control-luxury {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #444; /* Linha cinza escura */
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 0;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.form-control-luxury:focus {
+    outline: none;
+    border-bottom-color: var(--accent); /* Linha fica dourada no foco */
+    box-shadow: 0 1px 0 0 var(--accent); /* Brilho sutil embaixo */
+}
+
+/* CORREÇÃO DO AUTOCOMPLETE AMARELO/BRANCO DO CHROME */
+.form-control-luxury:-webkit-autofill,
+.form-control-luxury:-webkit-autofill:hover, 
+.form-control-luxury:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px var(--bg-body) inset !important; /* Força fundo preto */
+    -webkit-text-fill-color: white !important; /* Força texto branco */
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Botão Entrar */
+.btn-login {
+    background-color: var(--accent);
+    color: #000;
+    border-radius: 0;
+    padding: 14px;
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+.btn-login:hover { background-color: #fff; transform: translateY(-2px); }
+
+/* Links e Checkbox */
+.form-check-input { background-color: transparent; border-color: #555; }
+.form-check-input:checked { background-color: var(--accent); border-color: var(--accent); }
+.forgot-pass { color: #666; font-size: 0.85rem; text-decoration: none; transition: 0.3s; }
+.forgot-pass:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+    .login-container { height: auto; }
+    .bg-login-col { height: 250px; }
 }

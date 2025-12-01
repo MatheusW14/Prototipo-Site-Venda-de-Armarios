@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Mario</title>
+    <title>Cadastro | Mario</title>
+    <link rel="icon" href="icone.png" type="image/png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" href="static/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,8 +39,8 @@
             <div class="col-md-6 col-lg-7 bg-login-col d-none d-md-block">
                 <div class="bg-overlay"></div>
                 <div class="position-absolute bottom-0 start-0 p-5 text-white" style="z-index: 2;">
-                    <h3 style="font-family: 'Playfair Display', serif;">Design Exclusivo.</h3>
-                    <p class="lead" style="color: #ccc;">Acesse sua área de cliente.</p>
+                    <h3 style="font-family: 'Playfair Display', serif;">Bem-vindo à Família.</h3>
+                    <p class="lead" style="color: #ccc;">Inicie sua jornada para transformar seu ambiente.</p>
                 </div>
             </div>
 
@@ -48,37 +48,46 @@
                 <div class="login-box">
                     <div class="text-center mb-5">
                         <span class="brand-title fs-1">MARIO</span>
-                        <p style="color: #666; font-size: 0.9rem;">BEM-VINDO DE VOLTA</p>
+                        <p style="color: #666; font-size: 0.9rem;">CRIAR NOVA CONTA</p>
                     </div>
 
-                    <form id="loginForm">
+                    <form id="cadastroForm">
                         
                         <div class="input-group-luxury">
+                            <label class="label-luxury">Nome Completo</label>
+                            <input type="text" class="form-control-luxury" placeholder="Seu nome" required>
+                        </div>
+
+                        <div class="input-group-luxury">
                             <label class="label-luxury">E-mail</label>
-                            <input type="email" class="form-control-luxury" placeholder="seu@email.com">
+                            <input type="email" class="form-control-luxury" placeholder="seu@email.com" required>
                         </div>
                         
                         <div class="input-group-luxury">
-                            <div class="d-flex justify-content-between">
-                                <label class="label-luxury">Senha</label>
-                                <a href="#" class="forgot-pass">Esqueceu?</a>
-                            </div>
-                            <input type="password" class="form-control-luxury" placeholder="******">
+                            <label class="label-luxury">Senha</label>
+                            <input type="password" class="form-control-luxury" placeholder="******" required>
+                        </div>
+
+                        <div class="input-group-luxury">
+                            <label class="label-luxury">Confirmar Senha</label>
+                            <input type="password" class="form-control-luxury" placeholder="******" required>
                         </div>
                         
                         <div class="d-flex align-items-center mb-4">
-                            <input class="form-check-input me-2" type="checkbox" id="remember">
-                            <label class="text-muted small" for="remember" style="cursor: pointer;">Lembrar-me</label>
+                            <input class="form-check-input me-2" type="checkbox" id="terms" required>
+                            <label class="text-muted small" for="terms" style="cursor: pointer;">
+                                Concordo com os <a href="#" style="color: var(--accent);">Termos de Uso</a>
+                            </label>
                         </div>
 
-                        <button type="submit" id="btnEntrar" class="btn btn-login">
-                            <span class="btn-text">ENTRAR</span>
+                        <button type="submit" id="btnCadastrar" class="btn btn-login">
+                            <span class="btn-text">CADASTRAR</span>
                             <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                         </button>
                         
                         <div class="text-center mt-4">
-                            <span class="text-muted small">Ainda não tem conta?</span>
-                            <a href="cadastro.html" class="text-white fw-bold small ms-1" style="text-decoration: underline;">Cadastre-se</a>
+                            <span class="text-muted small">Já possui conta?</span>
+                            <a href="login.html" class="text-white fw-bold small ms-1" style="text-decoration: underline;">Fazer Login</a>
                         </div>
                     </form>
                 </div>
@@ -91,18 +100,20 @@
     <script src="script.js"></script>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('btnEntrar');
+        document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede recarregar
+            const btn = document.getElementById('btnCadastrar');
             const btnText = btn.querySelector('.btn-text');
             const spinner = btn.querySelector('.spinner-border');
 
-            btnText.textContent = "AUTENTICANDO...";
+            // Feedback visual
+            btnText.textContent = "CRIANDO CONTA...";
             spinner.classList.remove('d-none');
             btn.disabled = true;
 
+            // Espera 2 segundos e manda para o Login
             setTimeout(function() {
-                window.location.href = "index.html";
+                window.location.href = "login.html";
             }, 2000);
         });
     </script>
