@@ -11,105 +11,45 @@
     <style>
         /* TEMA DARK LUXURY GLOBAL */
         :root {
-            --bg-body: #121212;
-            --bg-card: #1e1e1e;
-            --text-main: #e0e0e0;
-            --text-muted: #a0a0a0;
-            --accent: #d4af37; /* Dourado */
-            --border-color: #333333;
+            --bg-body: #121212; --bg-card: #1e1e1e;
+            --text-main: #e0e0e0; --text-muted: #a0a0a0;
+            --accent: #d4af37; --border-color: #333333;
         }
 
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            padding-top: 80px;
-        }
-
-        h1, h2, h3, .navbar-brand, .font-playfair {
-            font-family: 'Playfair Display', serif;
-            color: #ffffff;
-        }
+        body { font-family: 'Lato', sans-serif; background-color: var(--bg-body); color: var(--text-main); padding-top: 80px; }
+        h1, h2, h3, .navbar-brand, .font-playfair { font-family: 'Playfair Display', serif; color: #ffffff; }
 
         /* Navbar */
-        .navbar {
-            background-color: rgba(18, 18, 18, 0.95) !important;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 15px 0;
-        }
-        .nav-link {
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            color: var(--text-muted) !important;
-            margin-left: 20px;
-            transition: 0.3s;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: var(--accent) !important;
-        }
+        .navbar { background-color: rgba(18, 18, 18, 0.95) !important; backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); padding: 15px 0; }
+        .nav-link { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-muted) !important; margin-left: 20px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
 
         /* Botões */
-        .btn-mario {
-            background-color: var(--accent);
-            color: #000;
-            border-radius: 0;
-            padding: 12px 35px;
-            letter-spacing: 1px;
-            border: none;
-            transition: 0.3s;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-        }
-        .btn-mario:hover {
-            background-color: #fff;
-            color: #000;
-        }
+        .btn-mario { background-color: var(--accent); color: #000; border-radius: 0; padding: 12px 35px; letter-spacing: 1px; border: none; transition: 0.3s; text-decoration: none; font-weight: bold; display: inline-block; }
+        .btn-mario:hover { background-color: #fff; color: #000; }
         
-        .btn-outline-dark {
-            color: var(--text-main);
-            border-color: var(--text-main);
-            border-radius: 0;
-            transition: 0.3s;
-        }
-        .btn-outline-dark:hover {
-            background-color: var(--text-main);
-            color: #000;
-        }
+        .btn-outline-dark { color: var(--text-main); border-color: var(--text-main); border-radius: 0; transition: 0.3s; }
+        .btn-outline-dark:hover { background-color: var(--text-main); color: #000; }
 
         /* Hero */
         .hero {
             height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center;
+            /* Nova imagem de fundo bem escura e luxuosa */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center; text-align: center;
         }
         .hero h1 { font-size: 4rem; font-style: italic; }
 
-        /* Ajustes de Cores Bootstrap */
-        .bg-light, .bg-white {
-            background-color: var(--bg-card) !important;
-            color: var(--text-main);
-        }
+        /* Ajustes Cores */
+        .bg-light, .bg-white { background-color: var(--bg-card) !important; color: var(--text-main); }
         .text-primary { color: var(--accent) !important; }
         .text-secondary, .text-muted { color: var(--text-muted) !important; }
         
         /* Imagens */
-        .section-img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            filter: brightness(0.9);
-        }
+        .section-img { width: 100%; height: 600px; object-fit: cover; filter: brightness(0.9); }
 
-        footer {
-            border-top: 1px solid var(--border-color);
-            background-color: #0a0a0a !important;
-        }
+        footer { border-top: 1px solid var(--border-color); background-color: #0a0a0a !important; }
     </style>
 </head>
 <body>
@@ -143,14 +83,14 @@
     <section class="container-fluid p-0">
         <div class="row g-0">
             <div class="col-lg-7">
-                <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=2070&auto=format&fit=crop" class="section-img" alt="Cozinha">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" class="section-img" alt="Cozinha">
             </div>
             <div class="col-lg-5 d-flex align-items-center bg-light">
                 <div class="p-5">
                     <span class="text-primary fw-bold text-uppercase small">Gourmet & Convívio</span>
                     <h2 class="display-5 mt-2 mb-4">Cozinhas</h2>
                     <p class="lead text-secondary fs-6 mb-4">
-                        Conheça nossa linha completa de cozinhas planejadas, onde cada gaveta e armário é pensado para sua rotina.
+                        Conheça nossa linha completa de cozinhas planejadas, onde cada gaveta e armário é pensado para sua rotina com acabamento impecável.
                     </p>
                     <a href="cozinha.html" class="btn btn-outline-dark rounded-0 px-4">VER PROJETOS</a>
                 </div>
@@ -165,13 +105,13 @@
                     <span class="text-primary fw-bold text-uppercase small">Descanso & Intimidade</span>
                     <h2 class="display-5 mt-2 mb-4">Quartos</h2>
                     <p class="lead text-secondary fs-6 mb-4">
-                        Soluções elegantes para dormitórios. Closets inteligentes, cabeceiras estofadas e acabamentos relaxantes.
+                        Soluções elegantes para dormitórios. Closets inteligentes, cabeceiras estofadas e madeiras nobres para o seu descanso.
                     </p>
                     <a href="quarto.html" class="btn btn-outline-dark rounded-0 px-4 mt-3">VER PROJETOS</a>
                 </div>
             </div>
             <div class="col-lg-7 order-1 order-lg-2">
-                <img src="https://images.unsplash.com/photo-1505693416388-b0346ef414b9?q=80&w=2070&auto=format&fit=crop" class="section-img" alt="Quarto">
+                <img src="https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?q=80&w=2071&auto=format&fit=crop" class="section-img" alt="Quarto">
             </div>
         </div>
     </section>
