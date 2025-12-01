@@ -34,6 +34,14 @@
         .detail-card { border: none; transition: 0.3s; }
         .detail-card:hover { transform: translateY(-5px); }
         .detail-icon { font-size: 2rem; color: var(--primary-color); margin-bottom: 15px; }
+
+        /* Classe para forçar imagens do mesmo tamanho */
+        .img-padrao {
+            width: 100%;        /* Ocupa toda a largura da coluna */
+            height: 350px;      /* Define uma altura fixa para TODAS (pode aumentar se quiser) */
+            object-fit: cover;  /* A MÁGICA: Corta o excesso para preencher o espaço sem esticar */
+            border-radius: 5px; /* Opcional: arredonda levemente os cantos */
+        }
     </style>
 </head>
 <body>
@@ -109,10 +117,10 @@
         
         <div class="row mt-5">
             <div class="col-md-6 mb-4">
-                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2064&auto=format&fit=crop" class="img-fluid" alt="Sala de Estar">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2064&auto=format&fit=crop" class="img-padrao" alt="Sala de Estar">
             </div>
             <div class="col-md-6 mb-4">
-                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop" class="img-fluid" alt="Detalhe Marcenaria Sala">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop" class="img-padrao" alt="Detalhe Marcenaria Sala">
             </div>
         </div>
 
