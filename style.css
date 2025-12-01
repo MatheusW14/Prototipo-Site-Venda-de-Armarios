@@ -1,0 +1,321 @@
+/* =========================================
+   STYLE.CSS - VERSÃO FINAL LIMPA
+   ========================================= */
+   :root {
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --accent: #d4af37;        /* Dourado */
+    --border-color: #333333;
+    --black-deep: #000000;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    padding-top: 80px; /* IMPORTANTE: Espaço para a navbar fixa não cobrir o topo */
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand, .font-playfair, .footer-brand, .brand-title {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+}
+
+a { text-decoration: none; transition: 0.3s; }
+
+/* NAVBAR (Menu Principal) */
+.navbar {
+    background-color: rgba(18, 18, 18, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    
+    /* Configuração para o menu esconder/aparecer */
+    position: fixed; /* Mudamos de sticky para fixed para animar */
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    transition: transform 0.3s ease-in-out; /* Animação suave */
+}
+
+/* Classe que o JavaScript vai adicionar para esconder o menu */
+.navbar-hidden {
+    transform: translateY(-100%); /* Move o menu para cima (fora da tela) */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--text-muted) !important;
+    margin-left: 20px;
+    transition: 0.3s;
+    /* Prepara para o sublinhado não colar no texto */
+    padding-bottom: 5px; 
+    border-bottom: 2px solid transparent; /* Borda invisível para não pular ao passar mouse */
+}
+
+/* Efeito Hover e Active (Dourado + Sublinhado) */
+.nav-link:hover, .nav-link.active {
+    color: var(--accent) !important;
+    border-bottom: 2px solid var(--accent); /* O sublinhado dourado */
+}
+
+.navbar-toggler { border-color: var(--border-color); }
+.navbar-toggler-icon { filter: invert(1); }
+
+/* BOTÕES */
+.btn-mario {
+    background-color: var(--accent);
+    color: #000;
+    border-radius: 0;
+    padding: 12px 35px;
+    letter-spacing: 1px;
+    border: none;
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.btn-mario:hover { background-color: #fff; color: #000; }
+
+.btn-outline-dark {
+    color: var(--text-main);
+    border-color: var(--text-main);
+    border-radius: 0;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+.btn-outline-dark:hover { background-color: var(--text-main); color: #000; }
+
+/* HERO & SEÇÕES */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax */
+    display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.hero h1 { font-size: 4rem; font-style: italic; margin-bottom: 20px; }
+
+.page-header {
+    background-color: var(--bg-card);
+    padding: 80px 0 60px 0;
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* IMAGENS & ZOOM */
+.img-wrapper {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+.section-img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.9);
+    transition: transform 0.8s ease, filter 0.8s ease;
+}
+.row:hover .section-img { transform: scale(1.05); filter: brightness(1); }
+
+/* GALERIA CARDS */
+.project-card {
+    position: relative; overflow: hidden; margin-bottom: 30px; background-color: transparent;
+}
+.project-card img {
+    width: 100%; height: 350px; object-fit: cover;
+    transition: transform 0.5s; filter: brightness(0.85); border-radius: 4px;
+}
+.project-card:hover img { transform: scale(1.05); filter: brightness(1); }
+.project-info { padding: 15px 0; }
+.project-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; }
+.project-cat { font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+
+/* BOOTSTRAP OVERRIDES */
+.bg-light, .bg-white { background-color: var(--bg-card) !important; color: var(--text-main); }
+.text-primary { color: var(--accent) !important; }
+.text-secondary, .text-muted { color: var(--text-muted) !important; }
+
+/* FOOTER */
+.footer-section {
+    background-color: #080808 !important;
+    border-top: 1px solid var(--border-color);
+    padding-top: 80px; padding-bottom: 40px;
+    color: #ccc; font-size: 0.9rem; margin-top: auto;
+}
+.footer-brand { font-size: 1.8rem; margin-bottom: 20px; display: block; color: #fff; }
+.footer-heading { font-size: 1.2rem; margin-bottom: 25px; position: relative; }
+.footer-heading::after {
+    content: ''; display: block; width: 30px; height: 2px;
+    background-color: var(--accent); margin-top: 10px;
+}
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { color: #888; display: inline-block; }
+.footer-links a:hover { color: var(--accent); transform: translateX(5px); }
+.newsletter-input {
+    background: transparent; border: none; border-bottom: 1px solid #444;
+    border-radius: 0; color: #fff; padding: 10px 0; width: 100%;
+}
+.newsletter-input:focus { outline: none; border-color: var(--accent); }
+.copyright { border-top: 1px solid #222; margin-top: 60px; padding-top: 20px; font-size: 0.8rem; color: #555; }
+
+/* LOGIN */
+/* Container Principal que ocupa a tela (menos a navbar de 80px) */
+.login-container {
+    height: calc(100vh - 80px);
+    width: 100%;
+    overflow: hidden; /* Evita barras de rolagem */
+}
+
+/* A linha do grid deve ter altura 100% do pai */
+.login-row {
+    height: 100%;
+}
+
+/* Coluna da Imagem */
+.bg-login-col {
+    background: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    height: 100%; /* Força a ocupar a altura toda */
+    position: relative;
+}
+
+/* Máscara escura sobre a imagem */
+.bg-overlay {
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+/* Coluna do Formulário */
+.form-col {
+    background-color: var(--bg-body);
+    height: 100%;
+    display: flex;
+    align-items: center; /* Centraliza Verticalmente */
+    justify-content: center; /* Centraliza Horizontalmente */
+    padding: 20px;
+}
+
+/* A caixa do formulário em si */
+.login-box {
+    width: 100%;
+    max-width: 400px; /* Limita a largura para não ficar gigante */
+    padding: 40px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra suave para destacar */
+}
+
+/* Inputs */
+.form-control {
+    background-color: #121212;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 0;
+    padding: 12px;
+}
+.form-control:focus {
+    background-color: #1a1a1a;
+    color: #fff;
+    border-color: var(--accent);
+    box-shadow: none;
+}
+
+/* Botão Entrar */
+.btn-login {
+    background-color: var(--accent);
+    color: #000;
+    border-radius: 0;
+    padding: 12px;
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.btn-login:hover { background-color: #fff; }
+
+/* Checkbox */
+.form-check-input {
+    background-color: #121212;
+    border-color: #333;
+    cursor: pointer;
+}
+.form-check-input:checked {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Ajuste para celular (altura automática se a tela for pequena) */
+@media (max-width: 768px) {
+    .login-container { height: auto; padding-bottom: 50px; }
+    .bg-login-col { height: 300px; } /* Imagem fica menor no topo */
+    .form-col { height: auto; }
+}
+
+/*9. CURSOR PERSONALIZADO DE LUXO/*
+
+/* Apenas em Desktop */
+@media (min-width: 992px) {
+    body { cursor: none; } /* Esconde a seta padrão */
+    a, button, .btn, input, .form-check-input { cursor: none; }
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    position: fixed;
+    top: 0; left: 0;
+    border-radius: 50%;
+    z-index: 999999; /* Z-Index altíssimo para ficar sobre tudo */
+    pointer-events: none; /* Deixa clicar através dele */
+    transform: translate(-50%, -50%);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    position: fixed;
+    top: 0; left: 0;
+    border-radius: 50%;
+    z-index: 999998; /* Um pouco abaixo do ponto */
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s; /* Sem delay de movimento */
+}
+
+/* Estado Hover (Quando passa em links) */
+body.hovering .cursor-outline {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(212, 175, 55, 0.1);
+    border-color: var(--accent);
+}
+body.hovering .cursor-dot { opacity: 0; }
+
+/* Esconde em mobile */
+@media (max-width: 991px) {
+    .cursor-dot, .cursor-outline { display: none !important; }
+    body { cursor: auto; }
+}

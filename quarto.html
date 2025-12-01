@@ -5,33 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quartos | MARIO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* TEMA DARK LUXURY */
-        :root {
-            --bg-body: #121212; --bg-card: #1e1e1e;
-            --text-main: #e0e0e0; --text-muted: #a0a0a0;
-            --accent: #d4af37; --border-color: #333333;
-        }
-        body { font-family: 'Lato', sans-serif; background-color: var(--bg-body); color: var(--text-main); padding-top: 80px; }
-        h1, h2, h3, .navbar-brand { font-family: 'Playfair Display', serif; color: #fff; }
-
-        .navbar { background-color: rgba(18, 18, 18, 0.95) !important; border-bottom: 1px solid var(--border-color); padding: 15px 0; }
-        .nav-link { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-muted) !important; margin-left: 20px; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
-        .btn-outline-dark { color: var(--text-main); border-color: var(--text-main); border-radius: 0; }
-        .btn-outline-dark:hover { background-color: var(--text-main); color: #000; }
-
-        .page-header { background-color: var(--bg-card); padding: 100px 0; text-align: center; margin-bottom: 50px; border-bottom: 1px solid var(--border-color); }
-        /* Padronizando imagens do quarto */
-        .project-card img { width: 100%; height: 400px; object-fit: cover; margin-bottom: 20px; border-radius: 5px; filter: brightness(0.9); }
-        
-        footer { background-color: #0a0a0a !important; border-top: 1px solid var(--border-color); }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fs-3 fw-bold" href="index.html">MARIO.</a>
@@ -58,7 +38,6 @@
     </header>
 
     <div class="container">
-        
         <div class="row mb-5 align-items-center">
             <div class="col-md-7">
                 <div class="project-card">
@@ -110,16 +89,49 @@
                 <button class="btn btn-outline-dark rounded-0 btn-sm mt-2">Ver Detalhes</button>
             </div>
         </div>
-
     </div>
 
-    <footer class="text-white py-5 text-center mt-5">
+    <footer class="footer-section">
         <div class="container">
-            <h3 class="mb-3">MARIO.</h3>
-            <p class="small text-white-50">&copy; 2025 Mario Marcenaria.</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <a href="index.html" class="footer-brand">MARIO.</a>
+                    <p class="text-secondary mb-4">Há mais de 25 anos transformando madeira em obras de arte.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5 offset-lg-1">
+                    <h5 class="footer-heading">Explorar</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cozinha.html">Cozinhas</a></li>
+                        <li><a href="quarto.html">Quartos</a></li>
+                        <li><a href="sala.html">Salas</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="footer-heading">Contato</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="text-secondary mb-3"><i class="fas fa-phone me-2 text-primary"></i> (11) 99999-9999</li>
+                        <li class="text-secondary"><i class="fas fa-envelope me-2 text-primary"></i> contato@mario.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <form action="#" class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="newsletter-input" placeholder="Seu e-mail">
+                            <button class="btn text-primary" type="button"><i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row copyright text-center">
+                <div class="col-12"><p class="mb-0">&copy; 2025 Mario Marcenaria.</p></div>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
