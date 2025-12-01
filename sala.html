@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salas | MARIO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --primary-color: #2c3e50; }
+        body { font-family: 'Lato', sans-serif; color: #555; padding-top: 80px; }
+        h1, h2, h3, .navbar-brand { font-family: 'Playfair Display', serif; }
+
+        .navbar { background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 15px 0; }
+        .nav-link { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: #333 !important; margin-left: 20px; }
+        
+        .page-header {
+            background-color: #fff;
+            padding: 80px 0 40px 0;
+            text-align: center;
+        }
+
+        /* Imagem Panorâmica */
+        .featured-project {
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            margin-bottom: 60px;
+        }
+        
+        /* Cartões de detalhes */
+        .detail-card { border: none; transition: 0.3s; }
+        .detail-card:hover { transform: translateY(-5px); }
+        .detail-icon { font-size: 2rem; color: var(--primary-color); margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fs-3 fw-bold" href="index.html">MARIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cozinha.html">Cozinhas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quarto.html">Quartos</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold" href="sala.html">Salas</a></li> <li class="nav-item"><a class="btn btn-outline-dark rounded-0 ms-3 px-4" href="login.html">LOGIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-4">Salas & Home Theater</h1>
+            <p class="lead text-muted mt-3">Design contemporâneo para receber e conviver.</p>
+        </div>
+    </header>
+
+    <div class="container-fluid p-0">
+        <div class="featured-project"></div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h3>A harmonia perfeita entre tecnologia e madeira</h3>
+                <p class="text-muted mt-3">
+                    Nossos projetos de sala são desenvolvidos para ocultar a fiação, integrar equipamentos de som e proporcionar a acústica ideal. Trabalhamos com painéis ripados, lâminas naturais e iluminação indireta que valoriza o ambiente.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card detail-card h-100 p-4 bg-light">
+                    <div class="card-body text-center">
+                        <div class="detail-icon"><i class="fas fa-tv"></i></div>
+                        <h5 class="card-title font-playfair">Painéis Home</h5>
+                        <p class="card-text small text-secondary">Estruturas reforçadas para grandes telas, com nichos para decoração e eletrônicos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card detail-card h-100 p-4 bg-light">
+                    <div class="card-body text-center">
+                        <div class="detail-icon"><i class="fas fa-book"></i></div>
+                        <h5 class="card-title font-playfair">Estantes & Bibliotecas</h5>
+                        <p class="card-text small text-secondary">Design sob medida para sua coleção de livros e obras de arte, com iluminação focal.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card detail-card h-100 p-4 bg-light">
+                    <div class="card-body text-center">
+                        <div class="detail-icon"><i class="fas fa-wine-glass"></i></div>
+                        <h5 class="card-title font-playfair">Cristaleiras & Bares</h5>
+                        <p class="card-text small text-secondary">Espaços elegantes com portas de vidro e espelhos para compor seu ambiente de estar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-md-6 mb-4">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2064&auto=format&fit=crop" class="img-fluid" alt="Sala de Estar">
+            </div>
+            <div class="col-md-6 mb-4">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop" class="img-fluid" alt="Detalhe Marcenaria Sala">
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-dark text-white py-5 text-center mt-5">
+        <div class="container">
+            <h3 class="mb-3">MARIO</h3>
+            <p class="small text-white-50">&copy; 2025 Mario Marcenaria.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
