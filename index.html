@@ -22,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="cozinha.html">Cozinhas</a></li>
                     <li class="nav-item"><a class="nav-link" href="quarto.html">Quartos</a></li>
                     <li class="nav-item"><a class="nav-link" href="sala.html">Salas</a></li>
@@ -40,6 +40,45 @@
         </div>
     </section>
 
+    <section class="container py-5">
+        <div class="row text-center justify-content-center mb-5" data-aos="fade-up">
+            <div class="col-lg-8">
+                <h3 class="mb-3">A Excelência em Cada Detalhe</h3>
+                <p class="text-secondary">Mais do que móveis, criamos legados. Conheça o universo por trás da Mario.</p>
+                <i class="fas fa-chevron-down text-primary mt-2 fs-4 animation-bounce"></i>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="p-4 border border-secondary border-opacity-25 h-100 text-center hover-card">
+                    <i class="fas fa-landmark fs-1 mb-4 text-primary"></i>
+                    <h4 class="mb-3">Nossa História</h4>
+                    <p class="text-muted small mb-4">Tradição familiar e alfaiataria moveleira desde 1998.</p>
+                    <a href="sobre.html" class="btn btn-outline-light rounded-0 btn-sm">CONHECER A MARCA</a>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+                <div class="p-4 border border-secondary border-opacity-25 h-100 text-center hover-card">
+                    <i class="fas fa-layer-group fs-1 mb-4 text-primary"></i>
+                    <h4 class="mb-3">Materiais Nobres</h4>
+                    <p class="text-muted small mb-4">Pedras exóticas, madeiras certificadas e metais puros.</p>
+                    <a href="materiais.html" class="btn btn-outline-light rounded-0 btn-sm">VER MATERIAIS</a>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="p-4 border border-secondary border-opacity-25 h-100 text-center hover-card">
+                    <i class="fas fa-industry fs-1 mb-4 text-primary"></i>
+                    <h4 class="mb-3">Studio & Fábrica</h4>
+                    <p class="text-muted small mb-4">Onde a tecnologia de ponta encontra o acabamento manual.</p>
+                    <a href="sobre.html#fabrica" class="btn btn-outline-light rounded-0 btn-sm">TOUR VIRTUAL</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section class="container-fluid p-0">
         <div class="row g-0">
             <div class="col-lg-7 overflow-hidden">
@@ -132,10 +171,10 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mb-5">
                     <h5 class="footer-heading">Newsletter</h5>
-                    <form action="#" class="mt-3">
+                    <form action="#" class="mt-3" id="newsletterForm">
                         <div class="input-group">
-                            <input type="email" class="newsletter-input" placeholder="Seu e-mail">
-                            <button class="btn text-primary" type="button"><i class="fas fa-arrow-right"></i></button>
+                            <input type="email" class="newsletter-input" placeholder="Seu e-mail" id="newsletterEmail" required>
+                            <button class="btn text-primary" type="submit"><i class="fas fa-arrow-right"></i></button>
                         </div>
                     </form>
                 </div>

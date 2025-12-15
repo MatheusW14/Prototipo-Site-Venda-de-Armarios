@@ -1,12 +1,9 @@
-/* =========================================
-   STYLE.CSS - VERSÃO FINAL LIMPA
-   ========================================= */
-   :root {
+:root {
     --bg-body: #121212;
     --bg-card: #1e1e1e;
     --text-main: #e0e0e0;
     --text-muted: #a0a0a0;
-    --accent: #d4af37;        /* Dourado */
+    --accent: #d4af37;       
     --border-color: #333333;
     --black-deep: #000000;
 }
@@ -15,7 +12,7 @@ body {
     font-family: 'Lato', sans-serif;
     background-color: var(--bg-body);
     color: var(--text-main);
-    padding-top: 80px; /* IMPORTANTE: Espaço para a navbar fixa não cobrir o topo */
+    padding-top: 80px; 
     overflow-x: hidden;
 }
 
@@ -26,24 +23,20 @@ h1, h2, h3, h4, h5, .navbar-brand, .font-playfair, .footer-brand, .brand-title {
 
 a { text-decoration: none; transition: 0.3s; }
 
-/* NAVBAR (Menu Principal) */
 .navbar {
     background-color: rgba(18, 18, 18, 0.95) !important;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     padding: 15px 0;
-    
-    /* Configuração para o menu esconder/aparecer */
-    position: fixed; /* Mudamos de sticky para fixed para animar */
+    position: fixed; 
     top: 0;
     width: 100%;
     z-index: 1030;
-    transition: transform 0.3s ease-in-out; /* Animação suave */
+    transition: transform 0.3s ease-in-out; 
 }
 
-/* Classe que o JavaScript vai adicionar para esconder o menu */
 .navbar-hidden {
-    transform: translateY(-100%); /* Move o menu para cima (fora da tela) */
+    transform: translateY(-100%); 
 }
 
 .navbar-brand {
@@ -59,21 +52,18 @@ a { text-decoration: none; transition: 0.3s; }
     color: var(--text-muted) !important;
     margin-left: 20px;
     transition: 0.3s;
-    /* Prepara para o sublinhado não colar no texto */
     padding-bottom: 5px; 
-    border-bottom: 2px solid transparent; /* Borda invisível para não pular ao passar mouse */
+    border-bottom: 2px solid transparent; 
 }
 
-/* Efeito Hover e Active (Dourado + Sublinhado) */
 .nav-link:hover, .nav-link.active {
     color: var(--accent) !important;
-    border-bottom: 2px solid var(--accent); /* O sublinhado dourado */
+    border-bottom: 2px solid var(--accent); 
 }
 
 .navbar-toggler { border-color: var(--border-color); }
 .navbar-toggler-icon { filter: invert(1); }
 
-/* BOTÕES */
 .btn-mario {
     background-color: var(--accent);
     color: #000;
@@ -100,13 +90,12 @@ a { text-decoration: none; transition: 0.3s; }
 }
 .btn-outline-dark:hover { background-color: var(--text-main); color: #000; }
 
-/* HERO & SEÇÕES */
 .hero {
     height: 90vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax */
+    background-attachment: fixed; 
     display: flex; align-items: center; justify-content: center; text-align: center;
 }
 .hero h1 { font-size: 4rem; font-style: italic; margin-bottom: 20px; }
@@ -119,7 +108,6 @@ a { text-decoration: none; transition: 0.3s; }
     border-bottom: 1px solid var(--border-color);
 }
 
-/* IMAGENS & ZOOM */
 .img-wrapper {
     width: 100%;
     height: 600px;
@@ -133,7 +121,7 @@ a { text-decoration: none; transition: 0.3s; }
 }
 .row:hover .section-img { transform: scale(1.05); filter: brightness(1); }
 
-/* GALERIA CARDS */
+
 .project-card {
     position: relative; overflow: hidden; margin-bottom: 30px; background-color: transparent;
 }
@@ -146,12 +134,10 @@ a { text-decoration: none; transition: 0.3s; }
 .project-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; }
 .project-cat { font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
 
-/* BOOTSTRAP OVERRIDES */
 .bg-light, .bg-white { background-color: var(--bg-card) !important; color: var(--text-main); }
 .text-primary { color: var(--accent) !important; }
 .text-secondary, .text-muted { color: var(--text-muted) !important; }
 
-/* FOOTER */
 .footer-section {
     background-color: #080808 !important;
     border-top: 1px solid var(--border-color);
@@ -174,43 +160,35 @@ a { text-decoration: none; transition: 0.3s; }
 .newsletter-input:focus { outline: none; border-color: var(--accent); }
 .copyright { border-top: 1px solid #222; margin-top: 60px; padding-top: 20px; font-size: 0.8rem; color: #555; }
 
-/* LOGIN */
-/* Container Principal que ocupa a tela (menos a navbar de 80px) */
 .login-container {
     height: calc(100vh - 80px);
     width: 100%;
-    overflow: hidden; /* Evita barras de rolagem */
+    overflow: hidden;
 }
 
-/* A linha do grid deve ter altura 100% do pai */
 .login-row {
     height: 100%;
 }
 
-/* Coluna da Imagem */
 .bg-login-col {
     background: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    height: 100%; /* Força a ocupar a altura toda */
+    height: 100%; 
     position: relative;
 }
 
-/* Banner Imersivo (Parallax) */
 .featured-project { 
-    height: 600px; /* Aumentei um pouco a altura */
-        /* NOVA IMAGEM DE HOME THEATER */
+    height: 600px; 
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1974&auto=format&fit=crop') no-repeat center center; 
     background-size: cover; 
-    background-attachment: fixed; /* Efeito que a imagem fica parada ao rolar */
-    position: relative; 
+    background-attachment: fixed; 
     margin-bottom: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     }
 
-/* Texto dentro do Banner */
 .featured-caption {
     text-align: center;
     color: #fff;
@@ -220,7 +198,6 @@ a { text-decoration: none; transition: 0.3s; }
     background: rgba(0,0,0,0.4);
     }
 
-/* Cards e Mosaico */
 .detail-card { border: 1px solid var(--border-color); transition: 0.3s; background-color: var(--bg-card); height: 100%; }
 .detail-card:hover { transform: translateY(-5px); border-color: var(--accent); }
 .detail-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
@@ -237,7 +214,6 @@ a { text-decoration: none; transition: 0.3s; }
 .mosaic-img:hover { filter: brightness(1); transform: scale(1.02); }
 .overflow-hidden { overflow: hidden; border-radius: 4px; }
 
-/* Máscara escura sobre a imagem */
 .bg-overlay {
     background-color: rgba(0,0,0,0.5);
     position: absolute;
@@ -245,27 +221,24 @@ a { text-decoration: none; transition: 0.3s; }
     width: 100%; height: 100%;
 }
 
-/* Coluna do Formulário */
 .form-col {
     background-color: var(--bg-body);
     height: 100%;
     display: flex;
-    align-items: center; /* Centraliza Verticalmente */
-    justify-content: center; /* Centraliza Horizontalmente */
+    align-items: center; 
+    justify-content: center; 
     padding: 20px;
 }
 
-/* A caixa do formulário em si */
 .login-box {
     width: 100%;
-    max-width: 400px; /* Limita a largura para não ficar gigante */
+    max-width: 400px; 
     padding: 40px;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra suave para destacar */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
 }
 
-/* Inputs */
 .form-control {
     background-color: #121212;
     border: 1px solid #333;
@@ -280,7 +253,6 @@ a { text-decoration: none; transition: 0.3s; }
     box-shadow: none;
 }
 
-/* Botão Entrar */
 .btn-login {
     background-color: var(--accent);
     color: #000;
@@ -295,7 +267,6 @@ a { text-decoration: none; transition: 0.3s; }
 }
 .btn-login:hover { background-color: #fff; }
 
-/* Checkbox */
 .form-check-input {
     background-color: #121212;
     border-color: #333;
@@ -306,18 +277,14 @@ a { text-decoration: none; transition: 0.3s; }
     border-color: var(--accent);
 }
 
-/* Ajuste para celular (altura automática se a tela for pequena) */
 @media (max-width: 768px) {
     .login-container { height: auto; padding-bottom: 50px; }
-    .bg-login-col { height: 300px; } /* Imagem fica menor no topo */
+    .bg-login-col { height: 300px; } 
     .form-col { height: auto; }
 }
 
-/*9. CURSOR PERSONALIZADO DE LUXO/*
-
-/* Apenas em Desktop */
 @media (min-width: 992px) {
-    body { cursor: none; } /* Esconde a seta padrão */
+    body { cursor: none; } 
     a, button, .btn, input, .form-check-input { cursor: none; }
 }
 
@@ -328,8 +295,8 @@ a { text-decoration: none; transition: 0.3s; }
     position: fixed;
     top: 0; left: 0;
     border-radius: 50%;
-    z-index: 999999; /* Z-Index altíssimo para ficar sobre tudo */
-    pointer-events: none; /* Deixa clicar através dele */
+    z-index: 999999; 
+    pointer-events: none; 
     transform: translate(-50%, -50%);
 }
 
@@ -340,13 +307,12 @@ a { text-decoration: none; transition: 0.3s; }
     position: fixed;
     top: 0; left: 0;
     border-radius: 50%;
-    z-index: 999998; /* Um pouco abaixo do ponto */
+    z-index: 999998;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background-color 0.2s; /* Sem delay de movimento */
+    transition: width 0.2s, height 0.2s, background-color 0.2s; 
 }
 
-/* Estado Hover (Quando passa em links) */
 body.hovering .cursor-outline {
     width: 60px;
     height: 60px;
@@ -355,15 +321,11 @@ body.hovering .cursor-outline {
 }
 body.hovering .cursor-dot { opacity: 0; }
 
-/* Esconde em mobile */
 @media (max-width: 991px) {
     .cursor-dot, .cursor-outline { display: none !important; }
     body { cursor: auto; }
 }
 
-/* MELHORIAS DO LOGIN  */
-
-/* Container Principal */
 .login-container {
     height: calc(100vh - 80px);
     width: 100%;
@@ -371,7 +333,6 @@ body.hovering .cursor-dot { opacity: 0; }
 }
 .login-row { height: 100%; }
 
-/* Coluna da Imagem (Esquerda) */
 .bg-login-col {
     background-color: #000;
     position: relative;
@@ -382,14 +343,12 @@ body.hovering .cursor-dot { opacity: 0; }
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    /* Nova imagem de textura/ambiente escuro */
     background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop') center/cover;
     opacity: 0.6;
     animation: kenBurns 20s ease-in-out infinite alternate;
 }
 @keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
 
-/* Coluna do Formulário (Direita) */
 .form-col {
     background-color: var(--bg-body);
     height: 100%;
@@ -401,21 +360,17 @@ body.hovering .cursor-dot { opacity: 0; }
 .login-box {
     width: 100%; max-width: 380px;
     padding: 40px;
-    /* Removemos a borda e o fundo cinza para ficar mais integrado ao fundo preto */
     background-color: transparent; 
 }
 
-/* --- NOVOS INPUTS (ESTILO GUCCI/ROLEX) --- */
-
 .input-group-luxury {
     position: relative;
-    margin-bottom: 30px; /* Espaço entre os campos */
+    margin-bottom: 30px; 
 }
 
-/* O Rótulo (Label) */
 .label-luxury {
     display: block;
-    color: var(--accent); /* Dourado */
+    color: var(--accent);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -423,12 +378,12 @@ body.hovering .cursor-dot { opacity: 0; }
     font-weight: bold;
 }
 
-/* O Campo de Texto */
+
 .form-control-luxury {
     width: 100%;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #444; /* Linha cinza escura */
+    border-bottom: 1px solid #444; 
     color: #fff;
     padding: 10px 0;
     border-radius: 0;
@@ -438,20 +393,20 @@ body.hovering .cursor-dot { opacity: 0; }
 
 .form-control-luxury:focus {
     outline: none;
-    border-bottom-color: var(--accent); /* Linha fica dourada no foco */
-    box-shadow: 0 1px 0 0 var(--accent); /* Brilho sutil embaixo */
+    border-bottom-color: var(--accent); 
+    box-shadow: 0 1px 0 0 var(--accent); 
 }
 
-/* CORREÇÃO DO AUTOCOMPLETE AMARELO/BRANCO DO CHROME */
+
 .form-control-luxury:-webkit-autofill,
 .form-control-luxury:-webkit-autofill:hover, 
 .form-control-luxury:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0 30px var(--bg-body) inset !important; /* Força fundo preto */
-    -webkit-text-fill-color: white !important; /* Força texto branco */
+    -webkit-box-shadow: 0 0 0 30px var(--bg-body) inset !important; 
+    -webkit-text-fill-color: white !important; 
     transition: background-color 5000s ease-in-out 0s;
 }
 
-/* Botão Entrar */
+
 .btn-login {
     background-color: var(--accent);
     color: #000;
@@ -467,7 +422,7 @@ body.hovering .cursor-dot { opacity: 0; }
 }
 .btn-login:hover { background-color: #fff; transform: translateY(-2px); }
 
-/* Links e Checkbox */
+
 .form-check-input { background-color: transparent; border-color: #555; }
 .form-check-input:checked { background-color: var(--accent); border-color: var(--accent); }
 .forgot-pass { color: #666; font-size: 0.85rem; text-decoration: none; transition: 0.3s; }
@@ -476,4 +431,23 @@ body.hovering .cursor-dot { opacity: 0; }
 @media (max-width: 768px) {
     .login-container { height: auto; }
     .bg-login-col { height: 250px; }
+}
+
+
+.hover-card {
+    transition: transform 0.3s, background-color 0.3s;
+    background-color: rgba(255,255,255,0.02);
+}
+.hover-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255,255,255,0.05);
+    border-color: var(--accent) !important;
+}
+.animation-bounce {
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
 }

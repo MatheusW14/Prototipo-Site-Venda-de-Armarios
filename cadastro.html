@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro | Mario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/static/logo.png" type="image/png">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/static/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <div class="cursor-dot"></div><div class="cursor-outline"></div>
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
@@ -26,6 +25,7 @@
                     <li class="nav-item"><a class="nav-link" href="cozinha.html">Cozinhas</a></li>
                     <li class="nav-item"><a class="nav-link" href="quarto.html">Quartos</a></li>
                     <li class="nav-item"><a class="nav-link" href="sala.html">Salas</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-dark rounded-0 ms-3 px-4" href="login.html">LOGIN</a></li>
                 </ul>
             </div>
         </div>
@@ -53,22 +53,22 @@
                         
                         <div class="input-group-luxury">
                             <label class="label-luxury">Nome Completo</label>
-                            <input type="text" class="form-control-luxury" placeholder="Seu nome" required>
+                            <input type="text" class="form-control-luxury" placeholder="Seu nome" id="cadNome" required>
                         </div>
 
                         <div class="input-group-luxury">
                             <label class="label-luxury">E-mail</label>
-                            <input type="email" class="form-control-luxury" placeholder="seu@email.com" required>
+                            <input type="email" class="form-control-luxury" placeholder="seu@email.com" id="cadEmail" required>
                         </div>
                         
                         <div class="input-group-luxury">
                             <label class="label-luxury">Senha</label>
-                            <input type="password" class="form-control-luxury" placeholder="******" required>
+                            <input type="password" class="form-control-luxury" placeholder="******" id="cadSenha" required>
                         </div>
 
                         <div class="input-group-luxury">
                             <label class="label-luxury">Confirmar Senha</label>
-                            <input type="password" class="form-control-luxury" placeholder="******" required>
+                            <input type="password" class="form-control-luxury" placeholder="******" id="cadConfSenha" required>
                         </div>
                         
                         <div class="d-flex align-items-center mb-4">
@@ -98,21 +98,57 @@
     <script src="assets/js/script.js"></script>
 
     <script>
-        document.getElementById('cadastroForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Impede recarregar
+        document.getElementById('cadastroForm').addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+            
             const btn = document.getElementById('btnCadastrar');
             const btnText = btn.querySelector('.btn-text');
             const spinner = btn.querySelector('.spinner-border');
 
-            // Feedback visual
-            btnText.textContent = "CRIANDO CONTA...";
+            const nome = document.getElementById('cadNome').value;
+            const email = document.getElementById('cadEmail').value;
+            const senha = document.getElementById('cadSenha').value;
+            const confSenha = document.getElementById('cadConfSenha').value;
+
+            if (senha !== confSenha) {
+                alert("As senhas não coincidem!");
+                return;
+            }
+
+            btnText.textContent = "PROCESSANDO...";
             spinner.classList.remove('d-none');
             btn.disabled = true;
 
-            // Espera 2 segundos e manda para o Login
-            setTimeout(function() {
-                window.location.href = "login.html";
-            }, 2000);
+            try {
+                const response = await fetch('https://jsonplaceholder.typicode.com/users', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        name: nome,
+                        email: email,
+                        password: senha 
+                    }),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    },
+                });
+
+                if (response.ok) {
+                    btnText.textContent = "SUCESSO!";
+                    spinner.classList.add('d-none');
+                    
+                    setTimeout(function() {
+                        window.location.href = "login.html";
+                    }, 1000);
+                } else {
+                    throw new Error('Erro no servidor');
+                }
+
+            } catch (error) {
+                console.error(error);
+                btnText.textContent = "ERRO AO CADASTRAR";
+                spinner.classList.add('d-none');
+                btn.disabled = false; 
+            }
         });
     </script>
 </body>
